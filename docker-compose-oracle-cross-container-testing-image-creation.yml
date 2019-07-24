@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  oracle:
+    image: howarddeiner/oracle-11g-ee
+    container_name: oracle
+    networks:
+      - backend
+    ports:
+      - "1521:1521"
+      - "8081:8080"
+    restart: always
+    environment:
+      ORACLE_ALLOW_REMOTE: "true"
+networks:
+  backend:
+    driver: bridge

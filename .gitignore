@@ -1,0 +1,32 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Bash
+*.swp
+
+# Maven
+log/
+target/
+.mvn
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Junk
+#*.out
+
+
+# Large TSV Data Files
+*.tsv.orig

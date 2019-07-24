@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+  oracle:
+    image: howarddeiner/cross-container-testing-oracle
+    container_name: oracle
+    networks:
+      - backend
+    ports:
+      - "1521:1521"
+      - "8081:8080"
+    restart: always
+    environment:
+      ORACLE_ALLOW_REMOTE: "true"
+  tomcat:
+#    image: tomcat:9.0.8-jre8
+#    image: tomcat:8.5.40-jre8
+#    image: tomcat:7.0.94-jre7
+    image: howarddeiner/cross-container-testing-tomcat
+    container_name: tomcat
+    networks:
+      - backend
+    ports:
+      - "8080:8080"
+#    volumes:
+#      - ./logs_tomcat:/usr/local/tomcat/logs
+    restart: always
+networks:
+  backend:
+    driver: bridge
